@@ -6,6 +6,14 @@ class Student
   end
 
   def self.all
+    sql = <<-SQL
+      SELECT * FROM Students
+    SQL
+    
+    vals = DB[:conn].execute(sql)
+    vals.each{|i|
+      self.
+    }
     # retrieve all the rows from the "Students" database
     # remember each row should be a new instance of the Student class
   end
@@ -40,4 +48,6 @@ class Student
     sql = "DROP TABLE IF EXISTS students"
     DB[:conn].execute(sql)
   end
+  
+
 end
