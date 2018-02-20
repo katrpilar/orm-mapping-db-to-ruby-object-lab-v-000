@@ -97,7 +97,7 @@ class Student
       WHERE grade = 10
     SQL
     
-    DB[:conn].execute(sql)[0..num]
+    DB[:conn].execute(sql)[1..num]
     
   end
 end
