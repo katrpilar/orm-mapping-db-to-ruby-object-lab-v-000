@@ -80,4 +80,12 @@ class Student
     
     DB[:conn].execute(sql)
   end
+  
+  def all
+    sql = <<-SQL
+      SELECT * FROM students
+    SQL
+    
+    DB[:conn].execute(sql)
+  end
 end
