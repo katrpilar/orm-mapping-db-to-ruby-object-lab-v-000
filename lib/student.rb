@@ -101,6 +101,13 @@ class Student
   end
   
   def self.first_student_in_grade_10
-    self.first_X_students_in_grade_10(1)
+    sql = <<-SQL
+      SELECT * FROM students
+      WHERE grade = 10
+      LIMIT 1
+    SQL
+    
+    DB[:conn].execute(sql).flatten[1..num]
+    # self.first_X_students_in_grade_10(1)
   end
 end
