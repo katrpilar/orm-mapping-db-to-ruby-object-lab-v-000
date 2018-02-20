@@ -107,7 +107,7 @@ class Student
       LIMIT 1
     SQL
     
-    DB[:conn].execute(sql).flatten[1..num]
+    DB[:conn].execute(sql).flatten
     # self.first_X_students_in_grade_10(1)
   end
 end
